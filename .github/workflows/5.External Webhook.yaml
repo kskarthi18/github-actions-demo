@@ -1,0 +1,16 @@
+name: External Webhook Trigger
+
+on:
+  repository_dispatch:
+    types: [deploy-trigger]
+
+jobs:
+  webhook-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print event payload
+        run: |
+          echo "Repository Dispatch Event Triggered"
+          echo "Event type: ${{ github.event.action }}"
+          echo "Payload: ${{ toJSON(github.event.client_payload) }}"
