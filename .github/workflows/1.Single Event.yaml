@@ -1,0 +1,12 @@
+name: Single Event
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  show-info:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Info
+      run: |
+        echo "This is the single event"
