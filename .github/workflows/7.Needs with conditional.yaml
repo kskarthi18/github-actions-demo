@@ -1,0 +1,27 @@
+name: Needs with Outputs Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      artifact_name: ${{ steps.set_output.outputs.artifact_name }}
+    steps:
+      - name: Build Application
+        run: echo "Building application..."
+
+      - name: Set output value
+        id: set_output
+        run: echo "artifact_name=app-build" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: build
+    if: needs.build.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Application
+        run: echo "Deploying artifact:${{ needs.build.outputs.artifact_name }}"
