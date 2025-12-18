@@ -6,3 +6,5 @@ Execute needs workflow
 Matrix workflow trigger
 
 [![Needs with Outputs Example](https://github.com/kskarthi18/github-actions-demo/actions/workflows/7.Needs%20with%20conditional.yaml/badge.svg)](https://github.com/kskarthi18/github-actions-demo/actions/workflows/7.Needs%20with%20conditional.yaml)
+
+[![Matrix Example](https://github.com/kskarthi18/github-actions-demo/actions/workflows/6.Matrix.yaml/badge.svg)](https://github.com/kskarthi18/github-actions-demo/actions/workflows/6.Matrix.yaml)
